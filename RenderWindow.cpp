@@ -28,5 +28,11 @@ void RenderWindow::cleanUp() {
 	window = NULL;
 }
 void RenderWindow::clear() {
-
+	SDL_RenderClear(renderer);
+}
+void RenderWindow::render(SDL_Texture* p_texture) {
+	SDL_RenderCopy(renderer, p_texture, NULL, NULL);
+}
+void RenderWindow::display() {
+	SDL_RenderPresent(renderer);
 }

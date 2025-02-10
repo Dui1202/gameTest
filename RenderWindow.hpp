@@ -9,7 +9,8 @@ public:
 	SDL_Texture* loadTexture(const char* p_path);
 	void cleanUp();
 	void clear();
-	void
+	void render(SDL_Texture* p_texture);
+	void display();
 private:
 	SDL_Window* window;
 	SDL_Renderer* renderer;

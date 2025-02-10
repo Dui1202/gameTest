@@ -13,6 +13,7 @@ int main(int argc, char* agrs[]) {
 	}
 
 	RenderWindow window("Gametest", 1280, 720);
+	SDL_Texture* playerTexture = window.loadTexture("./asset/player/witch-idle-sprite.png");
 
 	bool isGameRunning = true;
 	SDL_Event e;
@@ -22,6 +23,9 @@ int main(int argc, char* agrs[]) {
 				isGameRunning = false;
 			}
 		}
+		window.clear();
+		window.render(playerTexture);
+		window.display();
 	}
 
 	window.cleanUp();
