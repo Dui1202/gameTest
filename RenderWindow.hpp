@@ -1,6 +1,7 @@
 #pragma once
 #include <SDL.h>
 #include <SDL_image.h>
+#include"Entity.h"
 
 
 class RenderWindow {
@@ -9,7 +10,7 @@ public:
 	SDL_Texture* loadTexture(const char* p_path);
 	void cleanUp();
 	void clear();
-	void render(SDL_Texture* p_texture);
+	void render(Entity &p_entity);
 	void display();
 private:
 	SDL_Window* window;

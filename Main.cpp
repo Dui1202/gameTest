@@ -1,7 +1,9 @@
 ﻿#include <iostream>
 #include <SDL.h>
 #include <SDL_image.h>
+#include <vector>
 #include "RenderWindow.hpp";
+#include "Entity.h"
 
 int main(int argc, char* agrs[]) {
 	if (SDL_Init(SDL_INIT_VIDEO) > 0) {
@@ -14,6 +16,13 @@ int main(int argc, char* agrs[]) {
 
 	RenderWindow window("Gametest", 1280, 720);
 	SDL_Texture* playerTexture = window.loadTexture("./asset/player/witch-idle-sprite.png");
+	SDL_Texture* grassTexture = window.loadTexture("./asset/grass");
+	Entity player(Vector2f(100,100), playerTexture);
+	std::vector<Entity> grasses;
+	Entity grass(Vector2f(0, 120), grassTexture);
+	for (int i = 0; i < 4; i++) {
+
+	}
 
 	bool isGameRunning = true;
 	SDL_Event e;
@@ -24,7 +33,7 @@ int main(int argc, char* agrs[]) {
 			}
 		}
 		window.clear();
-		window.render(playerTexture);
+		window.render(player);
 		window.display();
 	}
 
