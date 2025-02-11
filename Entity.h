@@ -6,6 +6,7 @@
 class Entity {
 public:
 	Entity(Vector2f p_vector, SDL_Texture* p_tex);
+	//Get the Entity position
 	Vector2f getPos();
 	SDL_Rect getCurrentFrame();
 	SDL_Texture* getTex();
