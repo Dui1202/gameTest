@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include"Entity.h"
+#include "GameObject.h"
 
 
 class RenderWindow {
@@ -10,7 +11,7 @@ public:
 	SDL_Texture* loadTexture(const char* p_path);
 	void cleanUp();
 	void clear();
-	void render(Entity &p_entity);
+	void render(GameObject &p_entity);
 	void display();
 private:
 	SDL_Window* window;

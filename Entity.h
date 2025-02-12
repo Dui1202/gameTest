@@ -5,9 +5,10 @@
 
 class Entity {
 public:
-	Entity(Vector2f p_vector, SDL_Texture* p_tex);
+	Entity(Vector2f p_vector, SDL_Texture* p_tex, SDL_Rect p_frame);
 	//Get the Entity position
-	Vector2f getPos();
+	Vector2f& getPos();
+	void setPos(const Vector2f& p_pos);
 	SDL_Rect getCurrentFrame();
 	SDL_Texture* getTex();
 private:

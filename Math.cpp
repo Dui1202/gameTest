@@ -13,3 +13,19 @@ void Vector2f::print() {
 	std::cout << x << ' ' << y << std::endl;
 }
 
+Vector2f Vector2f::operator+(const Vector2f& other) const {
+	return Vector2f(x + other.x, y + other.y);
+}
+
+Vector2f Vector2f::operator-(const Vector2f& other) const {
+	return Vector2f(x - other.x, y - other.y);
+}
+
+Vector2f Vector2f::operator*(float other) const {
+	return Vector2f(x * other, y * other);
+}
+
+Vector2f Vector2f::operator/(float other) const {
+	return Vector2f(x / other, y / other);
+}
+

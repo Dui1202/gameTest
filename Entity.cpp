@@ -2,17 +2,17 @@
 #include<SDL.h>
 #include<SDL_image.h>
 
-Entity::Entity(Vector2f p_vector, SDL_Texture* p_tex)
-	:pos(p_vector), tex(p_tex)
-{
-	currentFrame.x = 0;
-	currentFrame.y = 0;
-	currentFrame.w = 64;
-	currentFrame.h = 64;
-}
-Vector2f Entity::getPos() {
+Entity::Entity(Vector2f p_vector, SDL_Texture* p_tex, SDL_Rect p_frame)
+	:pos(p_vector), tex(p_tex), currentFrame(p_frame){}
+
+Vector2f& Entity::getPos() {
 	return pos;
 }
+
+void Entity::setPos(const Vector2f& p_pos) {
+	pos = p_pos;
+}
+
 SDL_Rect Entity::getCurrentFrame() {
 	return currentFrame;
 }

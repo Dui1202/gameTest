@@ -5,6 +5,7 @@
 #include "RenderWindow.hpp"
 #include "Entity.h"
 #include "Math.h"
+#include "GameObject.h"
 
 RenderWindow::RenderWindow(const char* title, int p_w, int p_h)
 	:window(NULL), renderer(NULL) {
@@ -12,7 +13,7 @@ RenderWindow::RenderWindow(const char* title, int p_w, int p_h)
 	if (window == NULL) {
 		std::cout << "Failed to initialize window! Error: " << SDL_GetError << std::endl;
 	}
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 }
 SDL_Texture* RenderWindow::loadTexture(const char* p_path) {
 	SDL_Texture* texture = NULL;
@@ -32,7 +33,7 @@ void RenderWindow::cleanUp() {
 void RenderWindow::clear() {
 	SDL_RenderClear(renderer);
 }
-void RenderWindow::render(Entity &p_entity) {
+void RenderWindow::render(GameObject &p_entity) {
 	SDL_Rect src;
 	src.x = p_entity.getCurrentFrame().x;
 	src.y = p_entity.getCurrentFrame().y;
