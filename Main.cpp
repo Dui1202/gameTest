@@ -5,6 +5,7 @@
 #include "RenderWindow.hpp"
 #include "Entity.h"
 #include "GameObject.h"
+#include "Game.h"
 
 int main(int argc, char* agrs[]) {
 	//Initialize SDL and IMG
